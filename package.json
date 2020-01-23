@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "housfy-test --params wdio --personalizedConfPath runner/local.conf.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/register": "^7.4.0",
+    "dotenv": "^8.1.0",
+    "nodemon": "^1.17.5",
+    "path": "^0.12.7",
+    "taif": "housfy/taif#master",
+    "cucumber": "^6.0.5"
+  }
+}
