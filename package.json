@@ -8,10 +8,11 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/register": "^7.4.0",
+    "cucumber": "^6.0.5",
     "dotenv": "^8.1.0",
     "nodemon": "^1.17.5",
+    "np": "^6.0.0",
     "path": "^0.12.7",
-    "taif": "therussiankid92/taif#master",
-    "cucumber": "^6.0.5"
+    "taif": "1.0.9"
   }
 }
