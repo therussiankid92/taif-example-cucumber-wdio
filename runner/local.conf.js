@@ -25,7 +25,7 @@ exports.config = {
   reporters: ['spec'],
   cucumberOpts: {
     requireModule: ['@babel/register'],
-    require: [path.join(frameworkImplementationLocation, 'steps/*.steps.js')],
+    require: [path.join(frameworkImplementationLocation, 'steps/Definitions.steps.js')],
     backtrace: false,
     compiler: [],
     dryRun: false,

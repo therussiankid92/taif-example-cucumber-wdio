@@ -7,40 +7,50 @@ class Common {
         return process.env.TEST_APP_URL
     }
 
-    listOfFlatsIsDisplayed() {
-        browserInteractions.wait(5000)
-        browserInteractions.checkUrlContainsPath('/venta-inmuebles/')
+    get signInPage()
+    {
+        return 'index.php?controller=authentication&back=my-account'
     }
 
-    openPage(page) {
-        browserInteractions.openUrl(this.baseUrl + page)
+    get emailField() {
+        return browserInteractions.findElement('[id="email"]')
+    }
+    get passwordField() {
+        return browserInteractions.findElement('[id="passwd"]')
     }
 
-    get googleAddressField() {
-        return browserInteractions.findElement('[data-qa="googleAddress"]')
-    }
-    get googleFirstReturnedAddressOption() {
-        return browserInteractions.findElement('.pac-item')
+    get submitLoginButton() {
+        return browserInteractions.findElement('[id="SubmitLogin"]')
     }
 
-    get searchButton() {
-        return browserInteractions.findElement('[data-qa="searchAddress"]')
+    get InvalidCredentialsError() {
+        return browserInteractions.findElement('.alert.alert-danger')
     }
 
 
-    fillGoogleAddress() {
-        browserInteractions.fillElement(
-            this.googleAddressField, "C/Arago 100"
-        )
-        browserInteractions.waitForElementEnabled(
-            this.googleFirstReturnedAddressOption
-        )
-        browserInteractions.click(this.googleFirstReturnedAddressOption)
+    fillEmailField(email) {
+        browserInteractions.fillElement(this.emailField, email)
+    }
+    fillPasswordField(password) {
+        browserInteractions.fillElement(this.passwordField, password)
     }
 
-    clickSearchButton() {
-        browserInteractions.waitForElementEnabled(this.searchButton)
-        browserInteractions.click(this.searchButton)
+    clickSubmitLoginButton() {
+        browserInteractions.click(this.submitLoginButton)
+    }
+
+    openSignInPage() {
+        browserInteractions.openUrl(this.baseUrl +  this.signInPage)
+    }
+
+    loginWithInvalidCredentials() {
+    this.fillEmailField("email@mail.com")
+    this.fillPasswordField("password")
+    this.clickSubmitLoginButton()
+    }
+
+    invalidPasswordErrorIsDisplayed() {
+    browserInteractions.assertElementDisplayed(this.InvalidCredentialsError)
     }
 }
 

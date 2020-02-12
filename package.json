@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "housfy-test --params wdio --personalizedConfPath runner/local.conf.js"
+    "test": "taif --params wdio --personalizedConfPath runner/local.conf.js"
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
@@ -11,7 +11,7 @@
     "dotenv": "^8.1.0",
     "nodemon": "^1.17.5",
     "path": "^0.12.7",
-    "taif": "housfy/taif#master",
+    "taif": "therussiankid92/taif#master",
     "cucumber": "^6.0.5"
   }
 }

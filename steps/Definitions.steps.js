@@ -2,15 +2,14 @@ import { Given, When, Then } from 'cucumber';
 import {commonPage} from "../pages/Common.page";
 
 
-Given(/^a prospect lead is on the (.+) landing$/, page => {
-    commonPage.openPage(page)
+Given(/^a non-logged in user is on the sign in page$/, () => {
+    commonPage.openSignInPage()
 })
 
-When(/^an address is searched for in the buyers page$/, () => {
-    commonPage.fillGoogleAddress()
-    commonPage.clickSearchButton()
+When(/^invalid credentials are provided$/, () => {
+    commonPage.loginWithInvalidCredentials()
 })
 
-Then(/^the list of flats is displayed$/, () => {
-    commonPage.listOfFlatsIsDisplayed()
+Then(/^the login was unsuccessful$/, () => {
+    commonPage.invalidPasswordErrorIsDisplayed()
 })
