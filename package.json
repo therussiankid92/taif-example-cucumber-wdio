@@ -1,4 +1,8 @@
 {
+  "version": "1.0.1",
+  "description": "This is an example project showing you how to work with taif and tadf modules",
+  "author": "therussiankid92",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "test": "taif --params wdio --personalizedConfPath runner/local.conf.js"
@@ -13,6 +17,7 @@
     "nodemon": "^1.17.5",
     "np": "^6.0.0",
     "path": "^0.12.7",
-    "taif": "1.0.9"
+    "taif": "1.0.11",
+    "tadf": "1.0.2"
   }
 }

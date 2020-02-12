@@ -1,4 +1,5 @@
 import { browserInteractions } from "taif/lib"
+import {testData} from "tadf"
 require('dotenv').config()
 
 class Common {
@@ -44,8 +45,8 @@ class Common {
     }
 
     loginWithInvalidCredentials() {
-    this.fillEmailField("email@mail.com")
-    this.fillPasswordField("password")
+    this.fillEmailField(testData.invalidUser.email)
+    this.fillPasswordField(testData.invalidUser.password)
     this.clickSubmitLoginButton()
     }
 
