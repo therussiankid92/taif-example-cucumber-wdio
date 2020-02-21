@@ -12,7 +12,12 @@ exports.config = {
   specs: [path.join(frameworkImplementationLocation, 'features/*.feature')],
   capabilities: [
     {
-      browserName: 'chrome'
+      browserName: 'chrome',
+      "goog:chromeOptions": {
+
+        args: ['headless', 'disable-gpu'],
+
+      },
     }
   ],
   logLevel: 'trace',
